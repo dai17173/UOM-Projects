@@ -1,0 +1,102 @@
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class Implementation extends UnicastRemoteObject implements Interface{
+
+    
+    public synchronized void updateCommVar(String i) {
+       
+              
+        //εχουμε τις λειτουργειες για τις πραξεις που μπορουν να γινουν
+        switch (leitourgia) {
+            case "add":
+                CommVar = String.valueOf(num1 + num2);
+                break;
+            case "mul":
+                CommVar = String.valueOf(num1 * num2);
+                break;
+		  case "sub":
+                CommVar = String.valueOf(num1 - num2);
+                break;
+            case "div":
+                CommVar = String.valueOf(num1 / num2);
+                break;
+        }
+		System.out.println(leitourgia);
+
+    }
+
+    public synchronized String getCommVar() {
+        return CommVar;
+    }
+
+}
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface Interface extends Remote {
+	
+	//αλλαγη σε string
+    void setCommVar() throws RemoteException;
+    void updateCommVar(String i) throws RemoteException;
+    String getCommVar() throws RemoteException;
+}
+
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+public class Client {
+
+	private static final String HOST = "localhost";
+	private static int PORT = Registry.REGISTRY_PORT;
+	
+	
+	public static void main(String[] args) throws RemoteException, NotBoundException, InterruptedException{
+		
+		Registry registry = LocateRegistry.getRegistry(HOST,PORT);
+		String rmiObjName = "Counter";
+		Interface iface = (Interface) registry.lookup(rmiObjName);
+
+		iface.setCommVar();	
+	
+	
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("vale ari8mo1:");
+        int n1 = scanner.nextInt();
+
+        System.out.print("vale ari8mo2:");
+        int n2 = scanner.nextInt();
+
+        scanner = new Scanner(System.in);
+        System.out.print("praksi (add, sub, mul,div): ");
+        String praksi = scanner.nextLine();
+
+
+	System.out.println("Time is up, exiting...");
+		
+	}
+	
+}
+
+import java.rmi.*;
+import java.rmi.registry.*;
+import java.rmi.server.*;
+
+public class Server {
+	
+	private static final int PORT = Registry.REGISTRY_PORT;
+	
+	public static void main(String[] args) throws Exception{
+		
+		Implementation rObj = new Implementation();
+		Registry reg = LocateRegistry.createRegistry(PORT);
+		String rmiObjName = "Counter";
+		Naming.rebind(rmiObjName, rObj);
+		System.out.println("Remote object bounded.");
+	}
+
+}
