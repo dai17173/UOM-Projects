@@ -1,0 +1,95 @@
+import java.util.Random;
+
+public class STAVROS{
+
+	static int size = N;
+	static int [] a = new int[size];
+	//έχουμε P πυρήνες άρα και P threads
+	static int numThreads = P;
+	static int [] SynMax = new int[P];
+	static int max;
+
+	
+    public static void main(String[] args) {
+
+	//αρχικοποιω τον πινακα a
+	Random r = new Random();
+	int[] a = new int[size];
+	for(int i = 0; i < size; i++){
+		if(r.nextInt()>=0)
+			a[i] = r.nextInt();
+		else
+			a[i] = 0;
+	}
+
+	 ThreadName Threads[] = new ThreadName[NumThreads];
+	
+	//δημιουργια-εκκίνηση των threads
+	 for (int i = 0; i < numThreads; i++) {
+	    Threads[i] = new ThreadName(i, pSum, nSum);
+	    Threads[i].start();
+	 }
+	//τερματισμος των threads
+         for (int i = 0; i < numThreads; i++) {
+            try {
+	        Threads[i].join();
+            }
+            catch (InterruptedException e) {}
+	 } 
+	
+	//καθε νημα ψαχνει το μεγαλυτερο του max 	
+	max = 0;
+	for (int i=0; i<numThreads; i++){
+			if(SynMax[i] > max) 
+				max = SynMax[i]; 
+	}
+
+	//Εμφανιση αποτελεσματων
+	system.out.println("MAX: " + max);
+	
+
+
+    static class ThreadName extends Thread {
+
+	private int myStart;
+	private int myStop;
+		    
+	public ThreadName(int myId, int[] pSum, int[] nSum) {
+		
+		// κανουμε στατικη κατανομη 
+		myStart = myId * (size / numThreads);
+		myStop = myStart + (size / numThreads);
+		if (myId == (numThreads - 1)) myStop = size;
+	}
+-----------------------1.1-----------------------------
+	public void run() {
+		
+	int max = 0;
+		//ακολουθουμε στατικη κατανομη και μεσα στην for
+	    for(int i = myStart; i < myStop; i++){ 
+			if (a[i] > max) max = a[i];
+	   		 	SynMax[i] = max;
+		}	    
+	}
+-----------------------1.2-----------------------------
+
+	public void run() {
+
+		//ακολουθουμε στατικη κατανομη και μεσα στην for
+		for(int i = myStart; i < myStop; i++){
+			if (a[i] > max) max = a[i];
+	   			SynMax[i] = max;
+		}
+           for (int k = 0; k < numThreads; k++) {
+
+			//βαζουμε κλειδωμα γιατι εχουμε μοιραζομενη μεταβλητη και συγκρινω το max με το μεγαλυτερο
+			lock.lock();
+			try {
+			if(max > SynMax[j])
+				max = SynMax[j];
+			} finally {
+                    lock.unlock() ;
+          		}	
+		}    
+	}
+

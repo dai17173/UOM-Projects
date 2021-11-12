@@ -1,0 +1,270 @@
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.Condition;
+
+public class ProducerConsumer
+{
+	public static void main(String[] args)
+	{
+		int bufferSize = 5;
+		int noIterations = 20;
+		int producerDelay = 1;
+		int consumerDelay = 100;
+                int noProds = Ν;
+                int noCons = Ν;
+                Producer prod[] = new Producer[noProds];
+		Consumer cons[] = new Consumer[noCons];
+		
+
+		// Bounded Buffer
+                Buffer buff = new Buffer(bufferSize);
+		
+		// Producer threads
+                for (int i=0; i<noProds; i++) {
+			prod[i] = new Producer(buff, noIterations, producerDelay);
+			prod[i].start();
+		}
+
+		// Consumer threads
+                for (int j=0; j<noCons; j++) {
+		        cons[j] = new Consumer(buff, consumerDelay);
+			cons[j].start();
+                }
+	}
+}
+public class Producer extends Thread {
+	private Buffer buff;
+        private int reps;
+        private int scale;
+
+	// Constructor
+	public Producer(Buffer b, int r, int s) {
+		this.buff = b;
+                this.reps = r;
+                this.scale = s;
+	}
+
+	// Producer runs for reps times with random(scale) intervals
+	public void run() {
+		for(int i = 0; i < reps; i++) {
+			buff.put(i);
+                        try {
+              			sleep((int)(Math.random()*scale));
+           		} catch (InterruptedException e) { }
+                }
+		
+	}
+}
+public class Consumer extends Thread {
+	private Buffer buff;
+        private int scale;
+
+	// Constructor
+	public Consumer(Buffer b, int s) {
+		this.buff = b;
+                this.scale = s;
+	}
+
+	// Producer runs for reps times with random(scale) intervals
+	public void run() {
+		int value;
+		while (true) {
+			try {
+              			sleep((int)(Math.random()*scale));
+           		} catch (InterruptedException e) { }
+			value = buff.get();
+                }
+	}
+}
+public class Buffer
+{
+	private int contents ;
+	private Lock lock = new ReentrantLock();
+    	private final Condition bufferEmpty = lock.newCondition();
+	private boolean counter = true;
+
+	// Constructor
+    	 public Buffer() {
+     		contents = 0;
+     	 }     
+
+	// Put an item into buffer
+	public void put(int data) {
+		lock.lock();
+           try {
+                while (!counter) {
+		     //("The buffer is full")
+                	try {
+                           bufferEmpty.await();
+				} catch (InterruptedException e) { }
+            	}
+			contents = data;
+			counter = false;
+			bufferEmpty.signalAll(); //signal()
+           } finally {
+                lock.unlock() ;
+           }
+	}
+
+	// Get an item from bufffer
+	public int get() {
+           int data = 0;
+
+           lock.lock();
+           try {
+			while (counter) {
+                	//("The buffer is empty")
+                      try {
+                             bufferEmpty.await();
+				} catch (InterruptedException e) { }
+            	}
+			data = contents;
+			counter = true;
+			bufferEmpty.signalAll();
+		} finally {
+                lock.unlock() ;
+           }
+           return data;
+	}
+}
+-------------------------------------ΣΧΟΛΙΑΣΜΟΣ 2.1----------------------------------------------
+// Επειδη εχουμε ενα στοιχειο μεσα στον buffer δεν χρειαζομαστε τις μεταβλητες size, front, back 
+// καθως επισης ουτε τον μετρητη counter μιας και εχουμε ενα στοιχειο και δεν χρειαζεται να υπολογιζουμε περισσοτερα.
+// Επιπλεον, δεν χρειαζομαστε ουτε τον πινακα contents, γιαυτο τον μετατρεπουμε σε μεταβλητη.
+// Επισης, βαζουμε μια boolean μεταβλητη (τυχαια διαλεξα την ονομασια: counter), για να μας  
+// βοηθησει να κανουμε τους αντιστοιχους ελεγχους μεσα στα εκαστοτε while (δηλαδη αν ειναι full η empty αντιστοιχα).
+// Η μεταβλητη συνθηκης bufferFull ειναι ευνοητο πως δεν χρειαζεται.
+// Βαζουμε κλειδωμα (lock) και στο put και στο get γιατι εχουμε πολλους producer και consumer και πρεπει να προστατεψουμε την μεταβλητη
+// συνθηκης bufferEmpty.
+// Τελος, με ολες αυτες τις απλοποιησεις προκυπτει και ενας απλοποιημενος Constructor.
+// Εσκεμενα απεφυγα τις εκτυπωσεις μιας και θελω να δωσω περισσοτερη εμφαση στην λειτουργεια και τον χειρισμο των Producer-Consumer. 
+--------------------------------------------------------------------------------------------------
+
+import java.util.concurrent.Semaphore;
+
+public class ProducerConsumer
+{
+	public static void main(String[] args)
+	{
+		int bufferSize = 5;
+		int noIterations = 10;
+		int producerDelay = 100;
+		int consumerDelay = 100;
+                int noProds = Ν;
+                int noCons = Ν;
+                Producer prod[] = new Producer[noProds];
+		Consumer cons[] = new Consumer[noCons];
+		
+
+		// Bounded Buffer
+                Buffer buff = new Buffer(bufferSize);
+		
+		// Producer threads
+                for (int i=0; i<noProds; i++) {
+			prod[i] = new Producer(buff, noIterations, producerDelay);
+			prod[i].start();
+		}
+
+		// Consumer threads
+                for (int j=0; j<noCons; j++) {
+		        cons[j] = new Consumer(buff, consumerDelay);
+			cons[j].start();
+                }
+	}
+
+public class Consumer extends Thread {
+	private Buffer buff;
+        private int scale;
+
+	// Constructor
+	public Consumer(Buffer b, int s) {
+		this.buff = b;
+                this.scale = s;
+	}
+
+	// Consumer runs for ever ..
+	public void run() {
+		int value;
+		while (true) {
+			try {
+              			sleep((int)(Math.random()*scale));
+           		} catch (InterruptedException e) { }
+			value = buff.get();
+                }
+	}
+}
+
+public class Producer extends Thread {
+	private Buffer buff;
+        private int reps;
+        private int scale;
+
+	// Constructor
+	public Producer(Buffer b, int r, int s) {
+		this.buff = b;
+                this.reps = r;
+                this.scale = s;
+	}
+
+	// Producer runs for reps times with random(scale) intervals
+	public void run() {
+		for(int i = 0; i < reps; i++) {
+			buff.put(i);
+                        try {
+              			sleep((int)(Math.random()*scale));
+           		} catch (InterruptedException e) { }
+			//System.out.println("Producer : " + i);
+                }
+		
+	}
+}
+
+public class Buffer
+{
+	private int contents = 0;
+	private Semaphore mutex = new Semaphore(1);
+     private Semaphore bufferEmpty; 
+
+	// Constructor
+      public Buffer() {	
+           this.bufferEmpty = new Semaphore(1);
+     	}
+
+	// Put an item into buffer
+	public void put(int data) {
+
+		try {
+               	     bufferEmpty.acquire();
+		} catch (InterruptedException e) { }
+           try {
+               		mutex.acquire();
+		} catch (InterruptedException e) { }
+		contents = data;
+		mutex.release(); 
+	}
+
+	// Get an item from bufffer
+	public int get() {
+
+           int data = 0;
+           try {
+                mutex.acquire();
+           } catch (InterruptedException e) { }
+		data = contents;		
+		mutex.release();		
+		bufferEmpty.release();
+           return data;
+	}
+}
+-------------------------------------ΣΧΟΛΙΑΣΜΟΣ 2.2----------------------------------------------
+// Επειδη εχουμε ενα στοιχειο μεσα στον buffer δεν χρειαζομαστε τις μεταβλητες size, front, back 
+// καθως επισης ουτε τον μετρητη counter μιας και εχουμε ενα στοιχειο και δεν χρειαζεται να υπολογιζουμε περισσοτερα.
+// Επιπλεον, δεν χρειαζομαστε ουτε τον πινακα contents, γιαυτο τον μετατρεπουμε σε μεταβλητη.
+// Η μεταβλητη συνθηκης bufferFull ειναι ευνοητο πως δεν χρειαζεται.
+// Βαζουμε κλειδωμα (mutex) και στο put και στο get γιατι εχουμε πολλους producer και consumer και πρεπει να προστατεψουμε την μεταβλητη
+// συνθηκης bufferEmpty.
+// Τελος, με ολες αυτες τις απλοποιησεις προκυπτει και ενας απλοποιημενος Constructor.
+// Εσκεμενα απεφυγα τις εκτυπωσεις μιας και θελω να δωσω περισσοτερη εμφαση στην λειτουργεια και τον χειρισμο των Producer-Consumer. 
+--------------------------------------------------------------------------------------------------
+
+
