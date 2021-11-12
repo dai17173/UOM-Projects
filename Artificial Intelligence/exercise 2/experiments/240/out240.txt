@@ -1,0 +1,500 @@
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_1.txt out1_depth.txt 
+
+
+NO SOLUTION EXISTS. Proved by depth-first!
+Time spent: 0.015000 secs
+Number of steps: 272
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_2.txt out2_depth.txt 
+
+
+NO SOLUTION EXISTS. Proved by depth-first!
+Time spent: 0.000000 secs
+Number of steps: 235
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_3.txt out3_depth.txt 
+
+
+Solution found with depth-first!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=false  P9=false  P10=false  
+Time spent: 0.000000 secs
+Number of steps: 51
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_4.txt out4_depth.txt 
+
+
+Solution found with depth-first!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=true  P7=true  P8=false  P9=false  P10=true  
+Time spent: 0.000000 secs
+Number of steps: 54
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_5.txt out5_depth.txt 
+
+
+NO SOLUTION EXISTS. Proved by depth-first!
+Time spent: 0.000000 secs
+Number of steps: 238
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_6.txt out6_depth.txt 
+
+
+Solution found with depth-first!
+P1=true  P2=true  P3=false  P4=false  P5=true  P6=true  P7=true  P8=false  P9=false  P10=false  
+Time spent: 0.000000 secs
+Number of steps: 45
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_7.txt out7_depth.txt 
+
+
+Solution found with depth-first!
+P1=true  P2=false  P3=false  P4=true  P5=true  P6=true  P7=true  P8=true  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of steps: 91
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_8.txt out8_depth.txt 
+
+
+NO SOLUTION EXISTS. Proved by depth-first!
+Time spent: 0.015000 secs
+Number of steps: 265
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_9.txt out9_depth.txt 
+
+
+Solution found with depth-first!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=true  P9=true  P10=true  
+Time spent: 0.000000 secs
+Number of steps: 37
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe depth p_10.txt out10_depth.txt 
+
+
+NO SOLUTION EXISTS. Proved by depth-first!
+Time spent: 0.000000 secs
+Number of steps: 272
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_1.txt out1_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.003000 secs
+Number of restarts: 73440
+Number of steps: 221518
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_2.txt out2_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 71849
+Number of steps: 220130
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_3.txt out3_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=false  P9=false  P10=false  
+Time spent: 0.000000 secs
+Number of restarts: 2
+Number of steps: 10
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_4.txt out4_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=true  P7=true  P8=false  P9=false  P10=true  
+Time spent: 0.015000 secs
+Number of restarts: 15
+Number of steps: 45
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_5.txt out5_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 77075
+Number of steps: 220624
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_6.txt out6_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=false  P5=true  P6=true  P7=true  P8=false  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 11
+Number of steps: 31
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_7.txt out7_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=false  P3=false  P4=true  P5=true  P6=true  P7=true  P8=true  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 25
+Number of steps: 77
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_8.txt out8_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 74358
+Number of steps: 220880
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_9.txt out9_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=true  P9=true  P10=true  
+Time spent: 0.015000 secs
+Number of restarts: 11
+Number of steps: 34
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_10.txt out10_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.010000 secs
+Number of restarts: 75791
+Number of steps: 218783
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_1.txt out11_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 73527
+Number of steps: 222433
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_2.txt out12_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.010000 secs
+Number of restarts: 72102
+Number of steps: 220547
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_3.txt out13_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=false  P9=false  P10=false  
+Time spent: 0.000000 secs
+Number of restarts: 1
+Number of steps: 4
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_4.txt out14_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=true  P7=true  P8=false  P9=false  P10=true  
+Time spent: 0.015000 secs
+Number of restarts: 11
+Number of steps: 31
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_5.txt out15_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 77073
+Number of steps: 220979
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_6.txt out16_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=false  P5=true  P6=true  P7=true  P8=false  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 4
+Number of steps: 19
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_7.txt out17_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=false  P3=false  P4=true  P5=true  P6=true  P7=true  P8=true  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 4
+Number of steps: 14
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_8.txt out18_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.001000 secs
+Number of restarts: 74722
+Number of steps: 221261
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_9.txt out19_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=true  P9=true  P10=true  
+Time spent: 0.000000 secs
+Number of restarts: 0
+Number of steps: 4
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_10.txt out20_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.006000 secs
+Number of restarts: 75830
+Number of steps: 219171
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_1.txt out21_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.010000 secs
+Number of restarts: 73431
+Number of steps: 222605
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_2.txt out22_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 72030
+Number of steps: 220338
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_3.txt out23_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=false  P9=false  P10=false  
+Time spent: 0.000000 secs
+Number of restarts: 2
+Number of steps: 6
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_4.txt out24_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=true  P7=true  P8=false  P9=false  P10=true  
+Time spent: 0.000000 secs
+Number of restarts: 8
+Number of steps: 21
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_5.txt out25_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.013000 secs
+Number of restarts: 77040
+Number of steps: 221002
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_6.txt out26_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=false  P5=true  P6=true  P7=true  P8=false  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 9
+Number of steps: 24
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_7.txt out27_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=false  P3=false  P4=true  P5=true  P6=true  P7=true  P8=true  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 9
+Number of steps: 29
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_8.txt out28_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 74611
+Number of steps: 221315
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_9.txt out29_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=true  P9=true  P10=true  
+Time spent: 0.015000 secs
+Number of restarts: 13
+Number of steps: 43
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_10.txt out30_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.006000 secs
+Number of restarts: 75770
+Number of steps: 219114
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_1.txt out31_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 73526
+Number of steps: 222551
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_2.txt out32_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.009000 secs
+Number of restarts: 71870
+Number of steps: 220447
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_3.txt out33_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=false  P9=false  P10=false  
+Time spent: 0.000000 secs
+Number of restarts: 0
+Number of steps: 3
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_4.txt out34_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=true  P7=true  P8=false  P9=false  P10=true  
+Time spent: 0.015000 secs
+Number of restarts: 19
+Number of steps: 63
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_5.txt out35_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.006000 secs
+Number of restarts: 77035
+Number of steps: 221065
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_6.txt out36_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=false  P5=true  P6=true  P7=true  P8=false  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 5
+Number of steps: 17
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_7.txt out37_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=false  P3=false  P4=true  P5=true  P6=true  P7=true  P8=true  P9=false  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 7
+Number of steps: 20
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_8.txt out38_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.007000 secs
+Number of restarts: 74555
+Number of steps: 221339
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_9.txt out39_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=true  P9=true  P10=true  
+Time spent: 0.000000 secs
+Number of restarts: 2
+Number of steps: 8
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_10.txt out40_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.005000 secs
+Number of restarts: 75795
+Number of steps: 219210
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_1.txt out41_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.008000 secs
+Number of restarts: 73460
+Number of steps: 222533
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_2.txt out42_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.003000 secs
+Number of restarts: 71182
+Number of steps: 217953
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_3.txt out43_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=false  P5=false  P6=false  P7=false  P8=false  P9=true  P10=false  
+Time spent: 0.015000 secs
+Number of restarts: 7
+Number of steps: 24
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_4.txt out44_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=true  P7=true  P8=false  P9=false  P10=true  
+Time spent: 0.017000 secs
+Number of restarts: 6
+Number of steps: 17
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_5.txt out45_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.001000 secs
+Number of restarts: 71579
+Number of steps: 205143
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_6.txt out46_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=false  P5=true  P6=true  P7=true  P8=false  P9=false  P10=false  
+Time spent: 0.007000 secs
+Number of restarts: 7
+Number of steps: 22
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_7.txt out47_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=false  P3=false  P4=true  P5=true  P6=true  P7=true  P8=true  P9=false  P10=false  
+Time spent: 0.000000 secs
+Number of restarts: 0
+Number of steps: 3
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_8.txt out48_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.001000 secs
+Number of restarts: 65981
+Number of steps: 195471
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_9.txt out49_hill.txt 
+
+
+Solution found with hill-climbing!
+P1=true  P2=true  P3=false  P4=true  P5=true  P6=false  P7=false  P8=true  P9=true  P10=true  
+Time spent: 0.003000 secs
+Number of restarts: 4
+Number of steps: 14
+
+C:\Users\StavroS\Desktop\SourceCode>bcsp.exe hill p_10.txt out50_hill.txt 
+
+
+NO SOLUTION found with hill-climbing...
+Time spent: 60.001000 secs
+Number of restarts: 73621
+Number of steps: 212961
